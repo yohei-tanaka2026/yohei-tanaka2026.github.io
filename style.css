@@ -1,0 +1,121 @@
+/* ===== 全体 ===== */
+:root {
+  --text: #222;
+  --sub: #666;
+  --link: #1a5fb4;
+  --line: #ddd;
+  --bg: #fff;
+  --header-bg: #fafafa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  line-height: 1.8;
+}
+
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1 { text-align: center; margin-bottom: 0.2em; }
+h2 { border-bottom: 2px solid var(--text); padding-bottom: 4px; margin-top: 2.5em; }
+h3 { margin-top: 1.8em; }
+hr { border: none; border-top: 1px solid var(--line); margin: 2.5em 0; }
+
+.subtitle { text-align: center; color: var(--sub); margin-top: 0; }
+
+/* ===== プロフィール ===== */
+.profile { text-align: center; }
+.profile img {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* 略歴など、年と内容を並べる表 */
+.timeline { width: 100%; border-collapse: collapse; }
+.timeline td { padding: 6px 8px; vertical-align: top; border-bottom: 1px solid var(--line); }
+.timeline td:first-child { white-space: nowrap; color: var(--sub); width: 9em; }
+
+/* ===== 業績リスト ===== */
+.year-index a { margin-right: 0.6em; }
+.back { font-size: 0.85em; }
+ul.pubs li { margin-bottom: 0.6em; }
+.tag {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 0 6px;
+  border: 1px solid var(--sub);
+  border-radius: 3px;
+  margin-right: 4px;
+  color: var(--sub);
+}
+
+/* ===== ヘッダーとメニュー（右上のハンバーガー） ===== */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+.header .site-name {
+  display: inline-block;
+  padding: 14px 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+.menu-btn { display: none; }
+.menu-icon {
+  position: absolute;
+  right: 0; top: 0;
+  padding: 24px 20px;
+  cursor: pointer;
+}
+.navicon, .navicon::before, .navicon::after {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--text);
+  position: relative;
+  transition: 0.2s;
+}
+.navicon::before, .navicon::after { content: ""; position: absolute; }
+.navicon::before { top: 7px; }
+.navicon::after { top: -7px; }
+
+.menu {
+  list-style: none;
+  margin: 0; padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s;
+}
+.menu a {
+  display: block;
+  padding: 12px 20px;
+  border-top: 1px solid var(--line);
+  color: var(--text);
+}
+.menu-btn:checked ~ .menu { max-height: 300px; }
+.menu-btn:checked ~ .menu-icon .navicon { background: transparent; }
+.menu-btn:checked ~ .menu-icon .navicon::before { transform: rotate(-45deg); top: 0; }
+.menu-btn:checked ~ .menu-icon .navicon::after { transform: rotate(45deg); top: 0; }
+
+/* 画面が広いときはメニューを横並びで常に表示 */
+@media (min-width: 720px) {
+  .menu { float: right; max-height: none; }
+  .menu li { float: left; }
+  .menu a { border-top: none; padding: 14px 18px; }
+  .menu-icon { display: none; }
+}
