@@ -151,3 +151,12 @@ ul.pubs li { margin-bottom: 0.6em; }
   .menu a { border-top: none; padding: 14px 18px; }
   .menu-icon { display: none; }
 }
+
+/* ===== フッター（最終更新日） ===== */
+.site-footer {
+  text-align: center;
+  font-size: 0.85em;
+  color: var(--sub);
+  padding: 24px 16px 32px;
+  border-top: 1px solid var(--line);
+}
