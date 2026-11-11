@@ -3,77 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>研究成果 | 山田 太郎</title>
+  <title>研究成果 | 田中 鷹併</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
-  <a class="site-name" href="index.html">山田 太郎</a>
+  <a class="site-name" href="index.html">田中 鷹併</a>
   <input type="checkbox" class="menu-btn" id="menu-btn">
   <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
   <ul class="menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="achievements.html">研究成果</a></li>
+    <li><a id="lang-switch" href="en_achievements.html">English</a></li>
   </ul>
 </header>
 
 <main>
   <h1>研究成果</h1>
+  <p class="subtitle">年度（4月〜翌3月）ごとに表示しています</p>
 
-  <h3 id="list-of-years">年表</h3>
-  <p class="year-index">
-    <a href="#2026">2026</a>
-    <a href="#2025">2025</a>
-    <a href="#2024">2024</a>
-  </p>
+  <div id="year-tabs" class="year-tabs" role="tablist"></div>
+  <div id="year-content"></div>
 
-  <!-- ===== 年ごとのブロック。新しい年を足すときはこの塊をコピーする ===== -->
-  <hr>
-  <h2 id="2026">2026</h2>
-  <p class="back"><a href="#list-of-years">↑ 年表に戻る</a></p>
-
-  <h3>受賞</h3>
-  <ul class="pubs">
-    <li>○○学会 優秀発表賞, 2026年3月.</li>
-  </ul>
-
-  <h3>ジャーナル論文</h3>
-  <ul class="pubs">
-    <li>T. Yamada, H. Suzuki, "論文タイトルをここに書く," <i>Journal Name</i>, vol. 1, no. 2, pp. 10–20, 2026. (accepted)</li>
-  </ul>
-
-  <h3>国際会議</h3>
-  <ul class="pubs">
-    <li>T. Yamada, H. Suzuki, "Paper title here," in <i>Proc. International Conference XXXX</i>, Tokyo, Japan, Jun. 2026.</li>
-  </ul>
-
-  <!-- ===== 2025 ===== -->
-  <hr>
-  <h2 id="2025">2025</h2>
-  <p class="back"><a href="#list-of-years">↑ 年表に戻る</a></p>
-
-  <h3>国内研究会</h3>
-  <ul class="pubs">
-    <li><span class="tag">依頼講演</span>山田 太郎, "発表タイトル," ○○研究会, 2025年11月.</li>
-    <li>山田 太郎, 鈴木 花子, "発表タイトル," ○○全国大会, 2025年3月.</li>
-  </ul>
-
-  <h3>その他</h3>
-  <ul class="pubs">
-    <li>○○ハッカソン 参加, 2025年8月.</li>
-  </ul>
-
-  <!-- ===== 2024 ===== -->
-  <hr>
-  <h2 id="2024">2024</h2>
-  <p class="back"><a href="#list-of-years">↑ 年表に戻る</a></p>
-
-  <h3>国内研究会</h3>
-  <ul class="pubs">
-    <li>山田 太郎, "発表タイトル," ○○研究会, 2024年12月.</li>
-  </ul>
+  <noscript><p>このページの表示には JavaScript を有効にしてください。</p></noscript>
 </main>
 
+<!-- 業績の追加・修正は data.js を編集します -->
+<script src="data.js"></script>
+<script src="achievements.js"></script>
 </body>
 </html>
